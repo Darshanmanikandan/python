@@ -21,8 +21,8 @@ def menu():
             display_products()
         elif choice == '3':
             name = input("Enter product name to update: ")
-            new_name = input("New name (or press Enter to skip): ") or None
-            new_price = input("New price (or press Enter to skip): ")
+            new_name = input("New name (or press Enter to skip): ") or None  # takes the value if there is no value then take it as None 
+            new_price = input("New price (or press Enter to skip): ") 
             new_qty = input("New quantity (or press Enter to skip): ")
             update_product(
                 name,
@@ -41,5 +41,5 @@ def menu():
         else:
             print("Invalid choice! Please try again.")
             
-if __name__ == "__main__":
+if __name__ == "__main__":  # check whether the current file is being executed using the buit-in variables (This block will only run when the file is executed as the main script )
     menu()

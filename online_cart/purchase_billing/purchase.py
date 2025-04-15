@@ -1,10 +1,13 @@
 from product_details.entry_display import display_products, product_list
 def start_purchase():
     cart = []
-    total = 0
-    display_products()
+    total = 0 
+
+    display_products() # display the available products 
+
     while True:
-        choice = input("\nEnter product name to buy (or 'done' to finish): ").strip()
+        choice = input("\nEnter product name to buy (or 'done' to finish): ").strip()  # .strip() is a string method that removes any leading or trailing whitespace
+        # input validation
         if choice.lower() == 'done':
             break
         for product in product_list:
@@ -20,17 +23,19 @@ def start_purchase():
                 break
         else:
             print("Product not found.")
-    if not cart:
+    if not cart: # check for an empty cart 
         print("No items purchased.")
         return
     print("\n----- BILL -----")
     for item in cart:
-        print(f"{item['name']} - ₹{item['price']} x {item['quantity']} = ₹{item['total']}")
+        print(f"{item['name']} - ₹{item['price']} x {item['quantity']} = ₹{item['total']}")  # prints the items 
     print(f"\nSubtotal: ₹{total}")
+#calculate discount 
     discount = 0
     if total > 1000:
         discount = total * 0.10
         print(f"Discount (10%): -₹{discount}")
+#tax calculation 
     taxed_amount = (total - discount) * 1.18
     tax = taxed_amount - (total - discount)
     print(f"Tax (18%): ₹{round(tax, 2)}")
