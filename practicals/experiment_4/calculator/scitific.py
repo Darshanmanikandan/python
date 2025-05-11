@@ -1,0 +1,11 @@
+import math 
+def natural_log(x): 
+    return math.log(x) 
+def log_base_10(x): 
+    return math.log10(x)
+def sine(x): 
+    return math.sin(math.radians(x)) 
+def cosine(x): 
+    return math.cos(math.radians(x)) 
+def tangent(x): 
+    return math.tan(math.radians(x)) 
